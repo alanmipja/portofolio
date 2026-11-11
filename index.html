@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Alan Mifza – Portofolio</title>
+  <meta name="color-scheme" content="dark">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Unbounded:wght@500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <canvas id="gl" aria-hidden="true"></canvas><canvas id="fx" aria-hidden="true"></canvas>
+  <div class="bar" id="bar"></div>
+  <div class="ring" id="ring" aria-hidden="true"><i><span></span></i></div>
+  <div class="dot" id="dot" aria-hidden="true"></div>
+
+  <nav><a href="#atas">Beranda</a><a href="#tentang">Tentang</a><a href="#pendidikan">Edukasi</a><a
+      href="#prestasi">Prestasi</a><a href="#proyek">Proyek</a><a href="#kontak">Kontak</a></nav>
+
+  <div class="wrap" id="atas">
+    <header class="hero">
+      <p class="hi">Halo, saya</p>
+      <h1><span class="ln"><span>Alan</span></span><span class="ln"><span>Mifza</span></span></h1>
+      <p class="lead">Web developer yang suka membuat tampilan sederhana dan terasa hidup.</p>
+      <div class="acts"><a class="btn" href="#proyek">Lihat proyek</a><a class="btn ghost" href="#kontak">Hubungi
+          saya</a></div>
+      <ul class="stats">
+        <li><b></b>Tangerang, Indonesia</li>
+        <li id="clock">Memuat waktu</li>
+        <li>Web &amp; antarmuka</li>
+      </ul>
+    </header>
+
+    <section id="tentang">
+      <div class="ag">
+        <div class="stage">
+          <div class="pcard" id="pcard">
+            <div class="pback"></div>
+            <div class="pface">
+              <img id="photo" alt="Foto Alan Mifza" hidden>
+              <span class="ini" id="ini"></span>
+
+
+            </div>
+            <div class="chip"><b></b>Terbuka untuk proyek</div>
+          </div>
+        </div>
+        <div>
+          <h2>Tentang</h2>
+          <p>A vocational high school student specializing in Software Engineering, with a focus on Web & Mobile
+            Development. Experienced in designing and developing applications using Flutter, Laravel, and Tailwind CSS.
+            Detail-oriented, enjoys challenges, and ready to collaborate on innovative projects."</p>
+        
+        </div>
+      </div>
+    </section>
+
+    <section id="pendidikan">
+      <h2>Pendidikan</h2>
+      <ul class="tl">
+        <li><time>2025 – sekarang</time>
+          <div>
+            <h3>SMK IT Assyifa Boarding School</h3>
+            <p>Sekolah menengah kejuruan dengan sistem asrama.</p>
+          </div>
+        </li>
+        <li><time>2022 – 2025</time>
+          <div>
+            <h3>MTsN 4 Tangerang</h3>
+            <p>Sekolah menengah pertama.</p>
+          </div>
+        </li>
+        <li><time>2016 – 2022</time>
+          <div>
+            <h3>SD IT Nurul Arafah</h3>
+            <p>Sekolah dasar.</p>
+          </div>
+        </li>
+        <li><time>2015 – 2016</time>
+          <div>
+            <h3>TK Nurul Azahra</h3>
+            <p>Taman kanak-kanak.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="prestasi">
+      <h2>Prestasi</h2>
+      <div class="gridA">
+        <article class="card ach">
+          <div class="top"><span class="ic"><svg viewBox="0 0 24 24">
+                <path
+                  d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2z" />
+              </svg></span><span class="yr">Bela diri</span></div>
+          <h3>Juara 1 Pencak Silat BBC</h3>
+          <p>Juara pertama pada kejuaraan pencak silat BBC.</p>
+        </article>
+        <article class="card ach">
+          <div class="top"><span class="ic"><svg viewBox="0 0 24 24">
+                <path
+                  d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2z" />
+              </svg></span><span class="yr">Bela diri</span></div>
+          <h3>Juara 2 Pencak Silat JTC</h3>
+          <p>Juara Dua pada kejuaraan pencak silat JTC.</p>
+        </article>
+        <article class="card ach">
+          <div class="top"><span class="ic"><svg viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg></span><span class="yr">Olahraga</span></div>
+          <h3>Juara 2 Futsal</h3>
+          <p>Juara kedua cabang olahraga futsal.</p>
+        </article>
+        <article class="card ach">
+          <div class="top"><span class="ic"><svg viewBox="0 0 24 24">
+                <path
+                  d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
+              </svg></span><span class="yr">Teknologi</span></div>
+          <h3>Finalis Web Development ITECNOCUP</h3>
+          <p>Masuk babak final lomba Web Development di ITECNOCUP.</p>
+        </article>
+        <article class="card ach">
+          <div class="top"><span class="ic"><svg viewBox="0 0 24 24">
+                <path
+                  d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2z" />
+              </svg></span><span class="yr">Atletik</span></div>
+          <h3>Juara 1 Lari Sprint</h3>
+          <p>Juara pertama cabang lari sprint.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="proyek">
+      <h2>Proyek</h2>
+      <div class="grid">
+        <a class="card" href="#">
+          <div class="thumb t1"></div>
+          <h3>Sapa</h3>
+          <p>Semua urusan warga, dalam satu sapa</p><small>Laravel</small>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb t2"></div>
+          <h3>Dashboard Keuangan</h3>
+          <p>Grafik pemasukan dan pengeluaran untuk tim kecil.</p><small>Laravel · Chart.js</small>
+        </a>
+        <a class="card" href="#">
+          <div class="thumb t3"></div>
+          <h3>Aplikasi Catatan</h3>
+          <p>Catatan ringan yang bisa dipakai tanpa internet.</p><small>HTML · CSS · JavaScript</small>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <div class="mq" aria-label="Skill: HTML dan CSS, JavaScript, React, Node.js, Git, Figma">
+    <div aria-hidden="true">
+      <span>Laravel</span><span>React</span><span>Node.js</span><span>Git</span><span>Figma</span>
+      <span>Laravel</span><span>React</span><span>Node.js</span><span>Git</span><span>Figma</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section id="kontak" class="contact">
+      <div class="cbox">
+        <p class="avail"><b></b>Terbuka untuk proyek dan magang</p>
+        <h2 class="big">Ayo bikin sesuatu bersama.</h2>
+        <p class="cp">Ceritakan idemu lewat email atau pesan singkat. Saya biasanya membalas dalam satu hari.</p>
+        <div class="mrow"><a class="mail" href="mailto:halo@contoh.com">alanmifzaibrahim10@gmail.com</a><button
+            class="copy" id="copy" type="button">Salin email</button></div>
+        <div class="socs">
+          <a class="card soc" href="#"><svg viewBox="0 0 24 24">
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4M9 18c-4.51 2-5-2-7-2" />
+            </svg><span><b>GitHub</b><small>@alanmipja</small></span></a>
+          <a class="card soc" href="https://www.linkedin.com/in/alan-mifza-ibrahim-175668389/"><svg viewBox="0 0 24 24">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg><span><b>LinkedIn</b><small>Alan Mifza Ibrahim</small></span></a>
+          <a class="card soc" href="#"><svg viewBox="0 0 24 24">
+              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z" />
+            </svg><span><b>WhatsApp</b><small>+62 81290853067</small></span></a>
+          <a class="card soc" href="https://www.instagram.com/alanmfza_/"><svg viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01" />
+            </svg><span><b>Instagram</b><small>@alanmfza_</small></span></a>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>© 2026 Alan Mifza</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
