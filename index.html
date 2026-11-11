@@ -9,6 +9,7 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Unbounded:wght@500;700&display=swap">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 
 <body>
@@ -17,20 +18,20 @@
   <div class="ring" id="ring" aria-hidden="true"><i><span></span></i></div>
   <div class="dot" id="dot" aria-hidden="true"></div>
 
-  <nav><a href="#atas">Beranda</a><a href="#tentang">Tentang</a><a href="#pendidikan">Edukasi</a><a
-      href="#prestasi">Prestasi</a><a href="#proyek">Proyek</a><a href="#kontak">Kontak</a></nav>
+  <nav><a href="#atas">Home</a><a href="#tentang">About</a><a href="#pendidikan">Education</a><a
+      href="#prestasi">Achievements</a><a href="#proyek">Projects</a><a href="#kontak">Contact</a></nav>
 
   <div class="wrap" id="atas">
     <header class="hero">
-      <p class="hi">Halo, saya</p>
+      <p class="hi">Hello, I am</p>
       <h1><span class="ln"><span>Alan</span></span><span class="ln"><span>Mifza</span></span></h1>
-      <p class="lead">Web developer yang suka membuat tampilan sederhana dan terasa hidup.</p>
-      <div class="acts"><a class="btn" href="#proyek">Lihat proyek</a><a class="btn ghost" href="#kontak">Hubungi
-          saya</a></div>
+      <p class="lead">A web developer who enjoys creating simple, vibrant-feeling interfaces.</p>
+      <div class="acts"><a class="btn" href="#proyek">View Projects</a><a class="btn ghost" href="#kontak">Contact
+          Me</a></div>
       <ul class="stats">
         <li><b></b>Tangerang, Indonesia</li>
-        <li id="clock">Memuat waktu</li>
-        <li>Web &amp; antarmuka</li>
+        <li id="clock">Loading time</li>
+        <li>Web &amp; User Interface</li>
       </ul>
     </header>
 
@@ -45,11 +46,11 @@
 
 
             </div>
-            <div class="chip"><b></b>Terbuka untuk proyek</div>
+            <div class="chip"><b></b>Open for projects</div>
           </div>
         </div>
-        <div>
-          <h2>Tentang</h2>
+        <div data-aos="fade-up">
+          <h2 data-aos="fade-up">About</h2>
           <p>A vocational high school student specializing in Software Engineering, with a focus on Web & Mobile
             Development. Experienced in designing and developing applications using Flutter, Laravel, and Tailwind CSS.
             Detail-oriented, enjoys challenges, and ready to collaborate on innovative projects."</p>
@@ -59,39 +60,39 @@
     </section>
 
     <section id="pendidikan">
-      <h2>Pendidikan</h2>
+      <h2 data-aos="fade-up">Education</h2>
       <ul class="tl">
-        <li><time>2025 – sekarang</time>
+        <li data-aos="fade-up"><time>2025 – present</time>
           <div>
             <h3>SMK IT Assyifa Boarding School</h3>
-            <p>Sekolah menengah kejuruan dengan sistem asrama.</p>
+            <p>Vocational high school with a boarding system.</p>
           </div>
         </li>
-        <li><time>2022 – 2025</time>
+        <li data-aos="fade-up" data-aos-delay="100"><time>2022 – 2025</time>
           <div>
             <h3>MTsN 4 Tangerang</h3>
-            <p>Sekolah menengah pertama.</p>
+            <p>Junior high school.</p>
           </div>
         </li>
-        <li><time>2016 – 2022</time>
+        <li data-aos="fade-up" data-aos-delay="200"><time>2016 – 2022</time>
           <div>
             <h3>SD IT Nurul Arafah</h3>
             <p>Sekolah dasar.</p>
           </div>
         </li>
-        <li><time>2015 – 2016</time>
+        <li data-aos="fade-up" data-aos-delay="300"><time>2015 – 2016</time>
           <div>
             <h3>TK Nurul Azahra</h3>
-            <p>Taman kanak-kanak.</p>
+            <p>Kindergarten.</p>
           </div>
         </li>
       </ul>
     </section>
 
     <section id="prestasi">
-      <h2>Prestasi</h2>
+      <h2 data-aos="fade-up">Achievements</h2>
       <div class="gridA">
-        <article class="card ach">
+        <article class="card ach" data-aos="fade-up">
           <div class="top"><span class="ic"><svg viewBox="0 0 24 24">
                 <path
                   d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2z" />
@@ -99,7 +100,7 @@
           <h3>Juara 1 Pencak Silat BBC</h3>
           <p>Juara pertama pada kejuaraan pencak silat BBC.</p>
         </article>
-        <article class="card ach">
+        <article class="card ach" data-aos="fade-up" data-aos-delay="100">
           <div class="top"><span class="ic"><svg viewBox="0 0 24 24">
                 <path
                   d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2z" />
@@ -107,7 +108,7 @@
           <h3>Juara 2 Pencak Silat JTC</h3>
           <p>Juara Dua pada kejuaraan pencak silat JTC.</p>
         </article>
-        <article class="card ach">
+        <article class="card ach" data-aos="fade-up" data-aos-delay="200">
           <div class="top"><span class="ic"><svg viewBox="0 0 24 24">
                 <circle cx="12" cy="8" r="6" />
                 <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
@@ -115,7 +116,7 @@
           <h3>Juara 2 Futsal</h3>
           <p>Juara kedua cabang olahraga futsal.</p>
         </article>
-        <article class="card ach">
+        <article class="card ach" data-aos="fade-up" data-aos-delay="300">
           <div class="top"><span class="ic"><svg viewBox="0 0 24 24">
                 <path
                   d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
@@ -123,7 +124,7 @@
           <h3>Finalis Web Development ITECNOCUP</h3>
           <p>Masuk babak final lomba Web Development di ITECNOCUP.</p>
         </article>
-        <article class="card ach">
+        <article class="card ach" data-aos="fade-up" data-aos-delay="400">
           <div class="top"><span class="ic"><svg viewBox="0 0 24 24">
                 <path
                   d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2z" />
@@ -135,19 +136,19 @@
     </section>
 
     <section id="proyek">
-      <h2>Proyek</h2>
+      <h2 data-aos="fade-up">Projects</h2>
       <div class="grid">
-        <a class="card" href="#">
+        <a class="card" href="#" data-aos="fade-up">
           <div class="thumb t1"></div>
           <h3>Sapa</h3>
           <p>Semua urusan warga, dalam satu sapa</p><small>Laravel</small>
         </a>
-        <a class="card" href="#">
+        <a class="card" href="#" data-aos="fade-up" data-aos-delay="100">
           <div class="thumb t2"></div>
           <h3>Dashboard Keuangan</h3>
           <p>Grafik pemasukan dan pengeluaran untuk tim kecil.</p><small>Laravel · Chart.js</small>
         </a>
-        <a class="card" href="#">
+        <a class="card" href="#" data-aos="fade-up" data-aos-delay="200">
           <div class="thumb t3"></div>
           <h3>Aplikasi Catatan</h3>
           <p>Catatan ringan yang bisa dipakai tanpa internet.</p><small>HTML · CSS · JavaScript</small>
@@ -165,7 +166,7 @@
 
   <div class="wrap">
     <section id="kontak" class="contact">
-      <div class="cbox">
+      <div class="cbox" data-aos="fade-up">
         <p class="avail"><b></b>Terbuka untuk proyek dan magang</p>
         <h2 class="big">Ayo bikin sesuatu bersama.</h2>
         <p class="cp">Ceritakan idemu lewat email atau pesan singkat. Saya biasanya membalas dalam satu hari.</p>
@@ -194,6 +195,7 @@
   <footer>© 2026 Alan Mifza</footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="script.js"></script>
 </body>
 

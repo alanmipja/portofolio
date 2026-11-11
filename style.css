@@ -225,6 +225,11 @@
       overflow: visible
     }
 
+    .ch {
+      display: inline-block;
+      transition: transform .3s cubic-bezier(.2, .8, .2, 1), color .25s
+    }
+
     ::selection {
       background: var(--accent);
       color: #08080a
@@ -841,7 +846,7 @@
       }
 
       .socs {
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(2, minmax(0, 1fr))
       }
 
       .cbox {
@@ -850,13 +855,133 @@
     }
 
     @media(max-width:520px) {
+      html {
+        scroll-padding-top: 76px
+      }
+
+      nav {
+        top: calc(env(safe-area-inset-top, 0px) + 10px);
+        left: 10px;
+        right: 10px;
+        width: auto;
+        max-width: none;
+        transform: none;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch
+      }
+
+      nav::-webkit-scrollbar {
+        display: none
+      }
+
       nav a {
-        padding: 8px 11px;
+        flex: 0 0 auto;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 12px;
         font-size: 13px
       }
 
-      nav a:first-child {
-        display: none
+      .wrap {
+        padding-right: 20px;
+        padding-left: 20px
+      }
+
+      .hero {
+        min-height: 100svh;
+        padding-top: 84px
+      }
+
+      section {
+        padding-top: 76px;
+        padding-bottom: 32px
+      }
+
+      .stats {
+        gap: 8px;
+        margin-top: 32px
+      }
+
+      .stats li {
+        padding: 8px 12px;
+        font-size: 13px
+      }
+
+      .btn {
+        padding: 13px 20px
+      }
+
+      .btn.ghost {
+        margin-left: 0
+      }
+
+      .chip {
+        left: -8px;
+        bottom: 24px;
+        padding: 8px 12px;
+        font-size: 12px
+      }
+
+      .cbox {
+        padding: 28px 18px;
+        border-radius: 24px
+      }
+
+      .cbox .avail {
+        max-width: 100%;
+        font-size: 12px
+      }
+
+      .mrow {
+        gap: 16px
+      }
+
+      .mrow .mail {
+        font-size: clamp(18px, 5vw, 28px)
+      }
+
+      .socs {
+        gap: 10px
+      }
+
+      .soc {
+        min-width: 0;
+        gap: 9px;
+        padding: 14px 10px
+      }
+
+      .soc span {
+        min-width: 0;
+        overflow-wrap: anywhere
+      }
+
+      .soc small {
+        font-size: 11px
+      }
+
+      footer {
+        padding-top: 56px;
+        padding-bottom: 36px
+      }
+    }
+
+    @media(max-width:360px) {
+      .wrap {
+        padding-right: 16px;
+        padding-left: 16px
+      }
+
+      .cbox {
+        padding-right: 14px;
+        padding-left: 14px
+      }
+
+      .socs {
+        grid-template-columns: 1fr
       }
     }
 
