@@ -155,8 +155,11 @@
       left: 50%;
       transform: translateX(-50%);
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 4px;
-      padding: 6px;
+      width: min(780px, calc(100% - 26px));
+      padding: 6px 10px;
       border: 1px solid var(--line);
       border-radius: 999px;
       background: rgba(6, 6, 7, .7);
@@ -164,17 +167,32 @@
     }
 
     nav a {
-      padding: 8px 16px;
+      flex: 1 1 0;
+      text-align: center;
+      padding: clamp(7px, 1vw, 10px) clamp(6px, 1.3vw, 14px);
       border-radius: 999px;
       text-decoration: none;
       color: var(--muted);
-      font-size: 14px;
+      font-size: clamp(11px, 1.3vw, 14px);
+      line-height: 1.2;
+      white-space: nowrap;
       transition: color .2s, background .2s
     }
 
     nav a:hover {
       color: var(--text);
       background: #17181c
+    }
+
+    nav a svg {
+      display: none;
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round
     }
 
     .wrap {
@@ -856,34 +874,50 @@
 
     @media(max-width:520px) {
       html {
-        scroll-padding-top: 76px
+        scroll-padding-top: 12px
       }
 
       nav {
-        top: calc(env(safe-area-inset-top, 0px) + 10px);
-        left: 10px;
-        right: 10px;
-        width: auto;
-        max-width: none;
-        transform: none;
-        justify-content: flex-start;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch
-      }
-
-      nav::-webkit-scrollbar {
-        display: none
+        top: auto;
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 14px);
+        left: 50%;
+        right: auto;
+        width: min(100%, 440px);
+        max-width: calc(100% - 24px);
+        transform: translateX(-50%);
+        justify-content: center;
+        gap: 2px;
+        padding: 6px;
+        overflow: hidden;
+        background: rgba(14, 14, 17, .72);
+        -webkit-backdrop-filter: blur(16px) saturate(1.4);
+        backdrop-filter: blur(16px) saturate(1.4);
+        box-shadow: 0 12px 32px -8px rgba(0, 0, 0, .75), inset 0 0 0 1px rgba(165, 180, 252, .08)
       }
 
       nav a {
-        flex: 0 0 auto;
-        min-height: 44px;
-        display: inline-flex;
-        align-items: center;
-        padding: 8px 12px;
-        font-size: 13px
+        flex: 1 1 auto;
+        min-width: 0;
+        padding: 8px 6px;
+        font-size: 10px;
+        transition: color .2s, background .2s, transform .15s
+      }
+
+      nav a span {
+        display: inline
+      }
+
+      nav a svg {
+        display: none
+      }
+
+      nav a:active {
+        transform: scale(.96)
+      }
+
+      nav a.on {
+        color: var(--accent);
+        background: rgba(165, 180, 252, .16)
       }
 
       .wrap {
@@ -965,7 +999,7 @@
 
       footer {
         padding-top: 56px;
-        padding-bottom: 36px
+        padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px))
       }
     }
 
