@@ -123,7 +123,73 @@
       }
       addEventListener('resize', size); size();
 
-      var navs = [].slice.call(document.querySelectorAll('nav a'));
+      var nav = document.querySelector('nav');
+      var navs = [].slice.call(nav.querySelectorAll('a'));
+      var navIndicator = nav.querySelector('.nav-indicator');
+      var navTouchDown = false;
+      var navInteracting = false;
+      function placeNavIndicator(link) {
+        if (!link || !navIndicator) return;
+        var navRect = nav.getBoundingClientRect();
+        var linkRect = link.getBoundingClientRect();
+        navIndicator.style.width = linkRect.width + 'px';
+        navIndicator.style.height = linkRect.height + 'px';
+        navIndicator.style.transform = 'translate3d(' + (linkRect.left - navRect.left) + 'px,' + (linkRect.top - navRect.top) + 'px,0)';
+        nav.classList.add('has-indicator');
+      }
+      function pointNavLink(link) {
+        if (!link) return;
+        navInteracting = true;
+        navs.forEach(function (item) { item.classList.toggle('pointed', item === link) });
+        placeNavIndicator(link);
+      }
+      function navLinkAt(x, y) {
+        var target = document.elementFromPoint(x, y);
+        var link = target && target.closest ? target.closest('nav a') : null;
+        return link && nav.contains(link) ? link : null;
+      }
+      function resetNavIndicator() {
+        navInteracting = false;
+        navs.forEach(function (item) { item.classList.remove('pointed') });
+        var active = navs.filter(function (item) { return item.classList.contains('on') })[0];
+        placeNavIndicator(active || navs[0]);
+      }
+      nav.addEventListener('pointerover', function (e) {
+        if (e.pointerType === 'touch') return;
+        var link = e.target.closest ? e.target.closest('nav a') : null;
+        if (link) pointNavLink(link);
+      });
+      nav.addEventListener('pointermove', function (e) {
+        if (e.pointerType === 'touch' && !navTouchDown) return;
+        var link = navLinkAt(e.clientX, e.clientY);
+        if (link) pointNavLink(link);
+      });
+      nav.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'touch') return;
+        navTouchDown = true;
+        var link = navLinkAt(e.clientX, e.clientY);
+        if (link) pointNavLink(link);
+      });
+      nav.addEventListener('pointerup', function (e) {
+        if (e.pointerType !== 'touch') return;
+        navTouchDown = false;
+        resetNavIndicator();
+      });
+      nav.addEventListener('pointercancel', function () {
+        navTouchDown = false;
+        resetNavIndicator();
+      });
+      nav.addEventListener('pointerleave', function (e) {
+        if (e.pointerType !== 'touch' && !navTouchDown) resetNavIndicator();
+      });
+      nav.addEventListener('focusin', function (e) {
+        var link = e.target.closest ? e.target.closest('nav a') : null;
+        if (link) pointNavLink(link);
+      });
+      nav.addEventListener('focusout', function (e) {
+        if (!nav.contains(e.relatedTarget)) resetNavIndicator();
+      });
+      placeNavIndicator(navs[0]);
       if (window.AOS) {
         window.AOS.init({
           duration: 800,
@@ -154,7 +220,12 @@
         pcard.style.transform = 'rotateY(' + (tX * 14) + 'deg) rotateX(' + (-tY * 12) + 'deg)';
         bar.style.transform = 'scaleX(' + (sy / Math.max(document.documentElement.scrollHeight - H, 1)) + ')';
         var cur = 'atas';['tentang', 'pendidikan', 'prestasi', 'proyek', 'kontak'].forEach(function (id) { var el = $(id); if (el && el.getBoundingClientRect().top < H * .4) cur = id });
-        navs.forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + cur) });
+        navs.forEach(function (a) {
+          var active = a.getAttribute('href') === '#' + cur;
+          var wasActive = a.classList.contains('on');
+          a.classList.toggle('on', active);
+          if (active && !wasActive && !navInteracting) placeNavIndicator(a);
+        });
 
         if (renderer) {
           var t = reduce ? 0 : clock.getElapsedTime();

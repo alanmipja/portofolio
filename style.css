@@ -167,7 +167,8 @@
       background: linear-gradient(135deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, .025) 45%, rgba(165, 180, 252, .07)), rgba(14, 14, 18, .58);
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 12px 32px rgba(0, 0, 0, .35), 0 0 26px rgba(165, 180, 252, .07);
       -webkit-backdrop-filter: blur(20px) saturate(1.6);
-      backdrop-filter: blur(20px) saturate(1.6)
+      backdrop-filter: blur(20px) saturate(1.6);
+      touch-action: pan-y
     }
 
     nav::before {
@@ -212,6 +213,35 @@
       transition: color .2s, background .2s
     }
 
+    nav .nav-indicator {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 999px;
+      background: linear-gradient(110deg, rgba(165, 180, 252, .3), rgba(255, 255, 255, .16), rgba(165, 180, 252, .34));
+      background-size: 220% 100%;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 0 20px rgba(165, 180, 252, .2);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform .42s cubic-bezier(.2, .8, .2, 1), width .35s cubic-bezier(.2, .8, .2, 1), height .35s, opacity .2s;
+      animation: navIndicatorFlow 3s ease-in-out infinite alternate
+    }
+
+    nav.has-indicator .nav-indicator {
+      opacity: 1
+    }
+
+    nav a.pointed {
+      z-index: 2;
+      color: var(--text);
+      text-shadow: 0 0 12px rgba(255, 255, 255, .35);
+      transform: scale(1.12)
+    }
+
     @keyframes navGlassSweep {
       0% {
         opacity: .35;
@@ -242,7 +272,7 @@
       }
     }
 
-    @keyframes navActiveFlow {
+    @keyframes navIndicatorFlow {
       from {
         background-position: 0% 50%
       }
@@ -254,7 +284,7 @@
 
     nav a:hover {
       color: var(--text);
-      background: #17181c
+      background: transparent
     }
 
     nav a svg {
@@ -342,10 +372,7 @@
 
     nav a.on {
       color: var(--text);
-      background: linear-gradient(110deg, rgba(165, 180, 252, .2), rgba(255, 255, 255, .12), rgba(165, 180, 252, .24));
-      background-size: 220% 100%;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .14), 0 0 18px rgba(165, 180, 252, .16);
-      animation: navActiveFlow 3s ease-in-out infinite alternate
+      background: transparent
     }
 
     .stats {
@@ -976,7 +1003,7 @@
         min-width: 0;
         padding: 8px 6px;
         font-size: 10px;
-        transition: color .2s, background .2s, transform .15s
+        transition: color .2s, background .2s, transform .25s cubic-bezier(.2, .8, .2, 1)
       }
 
       nav a span {
@@ -987,13 +1014,13 @@
         display: none
       }
 
-      nav a:active {
+      nav a:active:not(.pointed) {
         transform: scale(.96)
       }
 
       nav a.on {
         color: var(--accent);
-        background: rgba(165, 180, 252, .16)
+        background: transparent
       }
 
       .wrap {
@@ -1141,7 +1168,13 @@
       .acts,
       nav::before,
       nav::after,
-      nav a.on {
+      nav a.on,
+      nav .nav-indicator {
         animation: none
+      }
+
+      nav .nav-indicator,
+      nav a.pointed {
+        transition: none
       }
     }
